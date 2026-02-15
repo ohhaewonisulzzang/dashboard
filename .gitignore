@@ -1,0 +1,7 @@
+# API 키 보안
+config.js
+
+# 기타
+.DS_Store
+*.log
+node_modules/

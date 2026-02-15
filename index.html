@@ -10,6 +10,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
         @keyframes float {
@@ -72,6 +76,8 @@
             color: #ffffff;
             outline: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: text;
+            -webkit-user-select: text;
         }
 
         .search-box::placeholder {
@@ -565,6 +571,7 @@
         </div>
     </div>
 
+    <script src="config.js"></script>
     <script>
         // Clock Function
         function updateClock() {
@@ -676,7 +683,7 @@
         // 날씨 정보 가져오기
         async function fetchWeather() {
             try {
-                const apiKey = '49295a40515d7ed9c91aec34797a5ffd';
+                const apiKey = CONFIG.WEATHER_API_KEY;
                 const city = 'Pyeongtaek';
 
                 const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=kr`);
